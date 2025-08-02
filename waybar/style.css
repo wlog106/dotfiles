@@ -1,0 +1,108 @@
+/* -------------------------------------------------
+ *  Nord Waybar Theme – tailored to your config.jsonc
+ *  Palette: https://www.nordtheme.com/docs/colors-and-palettes
+ * ------------------------------------------------- */
+
+/* ----------- 0. Global Bar Container ------------ */
+window#waybar {
+    /* Let the “pills” float; set fallback colour if you
+       ever disable pill backgrounds. */
+    background: transparent;
+    color: #D8DEE9;                        /* nord4 */
+    font-family: monospace;
+    font-size: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Gap between the three module groups (left / centre / right) */
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 0 6px;
+}
+
+/* ----------- 1. Pill Style (shared) --------------- */
+/* List *every* module used so all get the same look */
+#tray,
+#idle_inhibitor,
+#pulseaudio,
+#network,
+#power-profiles-daemon,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#battery,
+#clock,
+#workspaces button      /* each workspace button */
+{
+    background: rgba(59, 66, 82, 0.85);   /* nord1 (80 % opacity) */
+    border: 1px solid rgba(129, 161, 193, 0.35);  /* nord3 */
+    border-radius: 10px;
+    padding: 4px 12px;
+    margin: 0 4px;
+}
+
+/* Icon spacing inside tray to stop crowding */
+#tray > * {
+    margin: 0 4px;
+}
+
+/* ----------- 2. Workspace States ----------------- */
+#workspaces button.focused,
+#workspaces button.active {
+    /* highlight current workspace */
+    background: #88C0D0;      /* nord8 */
+    border-color: #88C0D0;
+    color: #2E3440;           /* nord0 – dark text on light pill */
+}
+
+#workspaces button.urgent {
+    background: #BF616A;      /* nord11 */
+    border-color: #BF616A;
+}
+
+/* Hover feedback for *any* workspace */
+#workspaces button:hover {
+    background: rgba(136, 192, 208, 0.25);  /* nord8 tint */
+    border-color: rgba(136, 192, 208, 0.55);
+    color: #ffffff;
+}
+
+/* Reduce padding on workspace glyph-only buttons if you prefer square pills
+#workspaces button {
+    padding: 4px 8px;
+} */
+
+/* ----------- 3. Individual Tweaks ---------------- */
+/* Make the power‑profiles icon pop a bit */
+#power-profiles-daemon {
+    background: #5E81AC;      /* nord10 */
+    border-color: #5E81AC;
+}
+
+
+/* Show muted volume & mic in red */
+#pulseaudio.muted,
+#pulseaudio.source-muted {
+    background: #BF616A;      /* nord11 */
+    border-color: #BF616A;
+}
+
+
+/* ----------- 4. Extras / Hover ------------------- */
+#tray > *:hover,
+#idle_inhibitor:hover,
+#pulseaudio:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#backlight:hover,
+#battery:hover,
+#clock:hover {
+    background: rgba(129, 161, 193, 0.25);  /* nord3 tint */
+    border-color: rgba(129, 161, 193, 0.55);
+}
+
